@@ -1,5 +1,4 @@
 import {Clipboard, Flex, Link, List, Text} from "@chakra-ui/react";
-import resumePDF from "../assets/Sabir_Tarique_Resume.pdf";
 
 function Footer() {
     return (
@@ -11,7 +10,7 @@ function Footer() {
         borderTop="2px solid" borderColor="cyan.400"
         >
             <List.Root as="ul" listStyle="none">
-                <List.Item><Link color="white" href={resumePDF} target="_blank" rel="noopener noreferrer">My Resume</Link></List.Item>
+                <List.Item><Link color="white" href="https://github.com/Sabir1013?tab=repositories" target="_blank" rel="noopener noreferrer">My Github</Link></List.Item>
                 <List.Item><Link color="white" href="https://www.linkedin.com/in/sabir-tarique-69a170312" target="_blank" rel="noopener noreferrer">My LinkedIn</Link></List.Item>
                 <List.Item>
                     <Clipboard.Root value="sabirmtarique@gmail.com">
