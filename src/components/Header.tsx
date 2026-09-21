@@ -1,6 +1,7 @@
-import { Box, Flex, List, Text } from "@chakra-ui/react";
+import { rainbow } from "@/animations";
+import { Box, Flex, List, Text, Link as ChakraLink } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 function Header() {
   const [title, setTitle] = useState("Sabir");
@@ -20,20 +21,22 @@ function Header() {
       fontFamily="monospace"
       justifyContent="space-between"
       alignItems="center"
-      pr="10"
-      pl="10"
+      pr={{ base: "4", md: "10" }}
+      pl={{ base: "4", md: "10" }}
       py="5"
       borderBottom="2px solid"
-      borderBottomColor="cyan.400"
+      flexWrap="wrap"
+      gap="3"
+      animation={`${rainbow} 10s linear infinite`}
     >
-      <Text as="h1" fontSize="2rem" fontWeight="extrabold" letterSpacing="tight">
+      <Text as="h1" fontSize={{ base: "1.5rem", md: "2rem" }} fontWeight="extrabold" letterSpacing="tight">
         {title}
       </Text>
       <Box as="nav">
         <List.Root display="flex" flexDirection="row" listStyleType="none" gap="10">
-          <List.Item><Link color="white" to="/">Home</Link></List.Item>
-          <List.Item><Link color="white" to="/interests">Interests</Link></List.Item>
-          <List.Item><Link color="white" to="/projects">Projects</Link></List.Item>
+          <List.Item><ChakraLink color="white"><RouterLink to="/">Home</RouterLink></ChakraLink></List.Item>
+          <List.Item><ChakraLink color="white"><RouterLink to="/interests">Interests</RouterLink></ChakraLink></List.Item>
+          <List.Item><ChakraLink color="white"><RouterLink to="/projects">Projects</RouterLink></ChakraLink></List.Item>
         </List.Root>
       </Box>
     </Flex>

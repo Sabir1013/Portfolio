@@ -1,13 +1,21 @@
+import { rainbow } from "@/animations";
 import {Clipboard, Flex, Link, List, Text} from "@chakra-ui/react";
 
 function Footer() {
     return (
         <Flex 
         as="footer" 
-        bg="black" color="white" fontFamily="math"
-        py="5" pl="10" pr="10" 
-        justifyContent="space-between"  alignItems="center"
-        borderTop="2px solid" borderColor="cyan.400"
+        bg="black" color="white" 
+        fontFamily="mono"
+        fontSize="sm"
+        py="5" pr={{ base: "4", md: "10" }}
+        pl={{ base: "4", md: "10" }}
+        justifyContent="space-between"  
+        alignItems="center"
+        borderTop="2px solid"
+        flexWrap="wrap"
+        gap="3"
+        animation={`${rainbow} 10s linear infinite`}
         >
             <List.Root as="ul" listStyle="none">
                 <List.Item><Link color="white" href="https://github.com/Sabir1013?tab=repositories" target="_blank" rel="noopener noreferrer">My Github</Link></List.Item>
@@ -23,7 +31,7 @@ function Footer() {
                     </Clipboard.Root>
                 </List.Item>
             </List.Root>
-            <Text as="h1">© 2026 Sabir Tarique</Text>
+            <Text as="p" fontSize={{ base: "2xs", md: "xs" }}>© 2026 Sabir Tarique</Text>
         </Flex>
     );
 }
